@@ -1,6 +1,10 @@
 import type { Metadata } from 'next';
 import { Cormorant_Garamond, Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
+import { Navbar } from '@/components/Navbar';
+import { FluidBackground } from '@/components/FluidBackground';
+import { CustomCursor } from '@/components/CustomCursor';
+import { SiteFooter } from '@/components/SiteFooter';
 
 const cormorantGaramond = Cormorant_Garamond({
   variable: '--font-cormorant',
@@ -24,29 +28,32 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://harsh-editor.vercel.app'),
-  title: 'HARSH — Film & Commercial Editor // The Auteur Portfolio',
+  title: {
+    default: 'HARSH — Video Editor & Rhythm Designer // Liquid Cinema',
+    template: '%s // HARSH Video Editor',
+  },
   description:
-    'The official cutting room and filmography of Harsh, lead video editor, colorist, and sound architect. Crafting rhythm, psychological tension, and narrative momentum in 24fps.',
+    'The official cutting room and filmography of Harsh, lead film editor, rhythm designer, and sound architect. Crafting psychological tension and narrative momentum in 24fps.',
   keywords: [
     'Harsh',
-    'Film Editor',
     'Video Editor',
-    'Colorist',
-    'Auteur Portfolio',
-    'DaVinci Resolve',
-    'Premiere Pro',
+    'Film Editor',
     'Commercial Editor',
-    'Narrative Film',
+    'Colorist',
+    'Liquid Cinema',
+    'DaVinci Resolve Studio 19',
+    'Premiere Pro',
+    'Avid Media Composer',
   ],
   authors: [{ name: 'Harsh' }, { name: 'Shivkumar' }],
   creator: 'Harsh',
   openGraph: {
-    title: 'HARSH — Film & Commercial Editor',
+    title: 'HARSH — Video Editor & Rhythm Designer',
     description:
-      'Crafting rhythm, psychological tension, and narrative momentum in 24fps. Explore the filmography and cutting room archives.',
+      'Crafting human breath, tension, and narrative momentum in 24fps. Explore the selected filmography and cutting room archives.',
     type: 'website',
     locale: 'en_US',
-    siteName: 'HARSH Portfolio',
+    siteName: 'HARSH Liquid Cinema Portfolio',
     images: [
       {
         url: '/posters/poster-1-chronicles-of-dust.jpg',
@@ -58,9 +65,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'HARSH — Film & Commercial Editor',
+    title: 'HARSH — Video Editor & Rhythm Designer',
     description:
-      'Crafting rhythm, psychological tension, and narrative momentum in 24fps. Explore the filmography and cutting room archives.',
+      'Crafting human breath, tension, and narrative momentum in 24fps. Explore the selected filmography and cutting room archives.',
     images: ['/posters/poster-1-chronicles-of-dust.jpg'],
   },
 };
@@ -73,17 +80,35 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${cormorantGaramond.variable} ${geistSans.variable} ${geistMono.variable} dark h-full antialiased selection:bg-[#f5f0e6] selection:text-[#08080a]`}
+      className={`${cormorantGaramond.variable} ${geistSans.variable} ${geistMono.variable} dark h-full antialiased selection:bg-[#f7f3eb] selection:text-[#05070c]`}
     >
-      <body className="min-h-full flex flex-col bg-[#08080a] text-[#f5f0e6] font-sans relative">
+      <body className="min-h-full flex flex-col bg-[#05070c] text-[#f7f3eb] font-sans relative">
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[10000] focus:px-4 focus:py-2 focus:bg-[#f5f0e6] focus:text-[#08080a] focus:font-mono focus:text-xs focus:uppercase focus:tracking-wider focus:rounded"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[10000] focus:px-4 focus:py-2 focus:bg-[#f7f3eb] focus:text-[#05070c] focus:font-mono focus:text-xs focus:uppercase focus:tracking-wider focus:rounded"
         >
           Skip to main content
         </a>
+
+        {/* Liquid Cinema GPU WebGL Fluid Atmosphere */}
+        <FluidBackground />
+
+        {/* Subtle Film Grain Noise Texture */}
         <div className="film-grain" aria-hidden="true" />
-        {children}
+
+        {/* Tactile Context-Aware Cursor */}
+        <CustomCursor />
+
+        {/* Global Masthead Navigation */}
+        <Navbar />
+
+        {/* Route Content */}
+        <div className="relative z-10 flex-1 flex flex-col">
+          {children}
+        </div>
+
+        {/* Global End-Credits Footer */}
+        <SiteFooter />
       </body>
     </html>
   );
