@@ -213,7 +213,7 @@ export default function HomePage() {
       </section>
 
       {/* 4. Contact & Commission Prompt */}
-      <section className="py-24 px-6 sm:px-8 relative bg-[#04060b]">
+      <section className="py-24 px-6 sm:px-8 relative bg-[#04060b]/40 backdrop-blur-sm border-b border-white/[0.08]">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-start lg:items-center justify-between gap-12">
           <div>
             <span className="font-mono text-xs uppercase tracking-widest text-[#d99b43] block mb-3">

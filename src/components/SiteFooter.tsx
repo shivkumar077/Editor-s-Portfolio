@@ -11,7 +11,7 @@ export function SiteFooter() {
   };
 
   return (
-    <footer className="relative z-10 py-20 px-6 sm:px-8 bg-[#04060a] border-t border-white/[0.08] select-none">
+    <footer className="relative z-10 py-20 px-6 sm:px-8 bg-[#04060a]/75 backdrop-blur-md border-t border-white/[0.08] select-none">
       <div className="max-w-7xl mx-auto flex flex-col justify-between gap-16">
         {/* End Credits Header */}
         <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-8 pb-12 border-b border-white/[0.08]">

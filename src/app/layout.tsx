@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { Cormorant_Garamond, Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
 import { Navbar } from '@/components/Navbar';
-import { FluidBackground } from '@/components/FluidBackground';
+import { VideoBackground } from '@/components/VideoBackground';
 import { CustomCursor } from '@/components/CustomCursor';
 import { SiteFooter } from '@/components/SiteFooter';
 
@@ -90,8 +90,8 @@ export default function RootLayout({
           Skip to main content
         </a>
 
-        {/* Liquid Cinema GPU WebGL Fluid Atmosphere */}
-        <FluidBackground />
+        {/* Primary Full-Screen Video Background */}
+        <VideoBackground />
 
         {/* Subtle Film Grain Noise Texture */}
         <div className="film-grain" aria-hidden="true" />

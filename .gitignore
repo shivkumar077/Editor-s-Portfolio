@@ -25,6 +25,12 @@
 .DS_Store
 *.pem
 
+# video assets (prevent pushing >100MB source footage)
+public/videos/*.mp4
+public/videos/*.mov
+public/videos/*.webm
+!public/videos/README.md
+
 # debug
 npm-debug.log*
 yarn-debug.log*
